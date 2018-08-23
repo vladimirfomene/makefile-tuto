@@ -1,0 +1,23 @@
+#Makefile version 2
+#we can add variables to make files
+#CC and CFLAGS are makefile variables. 
+#They are referenced using $() and are always declared at the top of the file.
+#CC is a variable that specifies which compiler to use to compile your program.
+#If given the name of a particular compiler, that compiler will be used to compile programs
+#Otherwise it will use the default compiler for C
+#RM is a variable which is equivalent to `rm -f`.
+
+
+CC=gcc
+CFLAGS=-I.
+
+all: hello
+
+hello: hello.o greeting.o
+	$(CC) -o hello hello.o greeting.o $(CFLAGS)
+
+clean:
+	$(RM) *.o Makefile hello
+	mv Makefile.orig Makefile
+
+
