@@ -13,6 +13,9 @@ CFLAGS=-I.
 
 all: hello
 
+#the items on the right of the target are the dependencies of the target.
+#Having object files as dependencies means the compiler will create object 
+#files from their corresponding C files before combining them into our hello program.
 hello: hello.o greeting.o
 	$(CC) -o hello hello.o greeting.o $(CFLAGS)
 
