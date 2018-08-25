@@ -1,0 +1,21 @@
+# Makefile version 4
+
+# $@ represents the name on the left side of the target colon.
+# $^ represents the name on the right side of the target colon. In # this case $(OBJ) which represents `hello.o greeting.o`
+
+CC=gcc
+CFLAGS=-I.
+DEPS = greeting.h
+OBJ = hello.o greeting.o
+
+all: hello
+
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+hello: $(OBJ) 
+	$(CC) -o $@ $^ $(CFLAGS)
+
+clean:
+	$(RM) *.o Makefile hello
+	mv Makefile.orig Makefile
