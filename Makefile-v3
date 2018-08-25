@@ -1,14 +1,15 @@
-#Makefile version 3
+# Makefile version 3
 
-#the variable DEPS represents the files on which our program depends on.
-#$@ represents the name of the left side of the target colon.
-#$< represents the first item in our list of dependencies (%.c - all files with .c extensions).
+# the variable DEPS represents the files on which our program     # depends on.
+# $@ represents the name of the left side of the target colon.
+# $< represents the first item in our list of dependencies (%.c - # all files with .c extensions).
 
-all: hello
 
 CC=gcc
 CFLAGS=-I.
 DEPS = greeting.h
+
+all: hello
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)

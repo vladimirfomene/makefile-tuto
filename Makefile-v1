@@ -1,13 +1,13 @@
-#Makefile Version 1
-#The names before the colons in Makefiles are called targets
-#They specify the name of a set of rules that you want to run to achieve a particular goal.
-#To follow along make sure you install the GNU make utility via the terminal (`sudo apt install make` on ubuntu)
-#It is recommended for every make file to have an all and a clean target.
+# Makefile Version 1
+# The names before the colons in Makefiles are called targets
+# They specify the name of a set of rules that you want to run to # achieve a particular goal.
+# To follow along make sure you install the GNU make utility via  # terminal (`sudo apt install make` on ubuntu)
+# It is recommended for every make file to have an all and a clean # target.
 
-#the all target depends on the hello target
+# the all target depends on the hello target
 all: hello
 
-#the rules of the hello target represent the commands you will have typed on the terminal to create the program `hello`
+# the rules of the hello target represent the commands you will   # have typed on the terminal to create the program `hello`
 hello: hello.c greeting.c
 	gcc -o hello hello.c greeting.c -I.
 
