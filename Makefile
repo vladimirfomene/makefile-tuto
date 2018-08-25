@@ -12,3 +12,8 @@ build-v3:
 	cp Makefile Makefile.orig
 	echo "saving the original makefile in a temp file"
 	cp Makefile-v3 Makefile
+
+build-v4:
+	cp Makefile Makefile.orig
+	echo "saving the original makefile in a temp file"
+	cp Makefile-v4 Makefile
